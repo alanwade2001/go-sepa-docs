@@ -57,7 +57,7 @@ func (d *Document) StoreDocument(data string) (*model.Document, error) {
 		return nil, err
 	}
 
-	newDocument.ID = persisted.ID
+	newDocument.ID = persisted.Model.ID
 
 	return newDocument, err
 }

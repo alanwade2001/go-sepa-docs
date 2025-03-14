@@ -4,7 +4,7 @@ import "github.com/alanwade2001/go-sepa-docs/internal/repository/entity"
 
 func ToDocument(doc *entity.Document) *Document {
 	document := Document{
-		ID:      doc.ID,
+		ID:      doc.Model.ID,
 		Content: doc.Content,
 	}
 
