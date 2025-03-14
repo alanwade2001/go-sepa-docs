@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/alanwade2001/go-sepa-docs/internal/service"
+	"github.com/alanwade2001/go-sepa-infra/routing"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,10 +12,14 @@ type Document struct {
 	service *service.Document
 }
 
-func NewDocument(service *service.Document) *Document {
+func NewDocument(service *service.Document, r *routing.Router) *Document {
 	document := &Document{
 		service: service,
 	}
+
+	r.Router.POST("/documents", document.PostDocument)
+	r.Router.GET("/documents", document.GetDocument)
+	r.Router.GET("/documents/:id", document.GetDocumentByID)
 
 	return document
 }
