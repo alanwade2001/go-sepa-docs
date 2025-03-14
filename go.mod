@@ -5,13 +5,13 @@ go 1.24.1
 require (
 	github.com/alanwade2001/go-sepa-db v0.0.0-20250314181629-ba7d1fd3f464
 	github.com/alanwade2001/go-sepa-infra v0.0.0-20250314180550-b9c6b1a26456
+	github.com/alanwade2001/go-sepa-utils v0.0.0-20250314081604-0992fcffbc2d
 	github.com/gin-gonic/gin v1.10.0
 	gorm.io/gorm v1.25.12
 )
 
 require (
 	github.com/alanwade2001/go-sepa-q v0.0.0-20250314083628-f5d6c10782b5 // indirect
-	github.com/alanwade2001/go-sepa-utils v0.0.0-20250314081604-0992fcffbc2d // indirect
 	github.com/bytedance/sonic v1.13.1 // indirect
 	github.com/bytedance/sonic/loader v0.2.4 // indirect
 	github.com/cloudwego/base64x v0.1.5 // indirect
