@@ -1,11 +1,11 @@
-POST http://localhost:8081/documents HTTP/1.1
+POST https://localhost:8444/documents HTTP/1.1
 Content-Type: application/xml
 
 <Document></Document>
 
 ###
-GET http://localhost:8081/documents HTTP/1.1
+GET https://localhost:8444/documents HTTP/1.1
 
 
 ###
-GET http://localhost:8081/documents/1 HTTP/1.1
+GET https://localhost:8444/documents/2 HTTP/1.1
