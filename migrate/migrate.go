@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"log/slog"
 
 	db "github.com/alanwade2001/go-sepa-db"
 	"github.com/alanwade2001/go-sepa-docs/internal/repository/entity"
@@ -12,11 +12,11 @@ func main() {
 	persist := db.NewPersist()
 	schemaName := utils.Getenv("DB_SCHEMA", "documents")
 	if err := persist.DB.Exec("CREATE SCHEMA IF NOT EXISTS " + schemaName).Error; err != nil {
-		log.Fatalf("cannot create schema: [%s], error:[%v]", schemaName, err)
+		slog.Error("cannot create schema", "schema", schemaName, "error", err)
 		return
 	}
 
 	persist.DB.AutoMigrate(&entity.Document{})
-	log.Printf("created table: [%s]", "documents")
+	slog.Info("created table:", "name", "documents")
 
 }
